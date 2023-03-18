@@ -1,5 +1,6 @@
 let currentColor = "#333333"
 let currentMode = "color"
+var currentSquares = 16
 
 const squareCounter = document.getElementById("square-counter");
 const container = document.getElementById("container")
@@ -9,9 +10,13 @@ const colorButton = document.getElementById("0")
 const rainbowButton = document.getElementById("1")
 const eraserButton = document.getElementById("2")
 const clearButton = document.getElementById("3")
+const squareSelector = document.getElementById("square-count")
 
-function reloadSquares(size) {
-    for(var i = 0; i<size**2; i++) {
+function reloadSquares () {
+    const squareSize = 400/currentSquares; 
+    container.innerHTML = ""
+
+    for(var i = 0; i<currentSquares**2; i++) {
         var squareDiv = document.createElement("div")
         squareDiv.classList.add("square")
         squareDiv.style.width= squareSize +"px"
@@ -42,7 +47,7 @@ eraserButton.onclick = () => {
     rainbowButton.classList.remove("active")
     eraserButton.classList.add("active")
 }
-clearButton.onclick = () => ""
+clearButton.onclick = () => reloadSquares()
 
 
 let mouseDown = false
@@ -58,13 +63,13 @@ for(var i = 0; i<16**2; i++) {
     container.appendChild(squareDiv)
 }
 
-
-function changeSquare(squareCount) {
-    const squareSize = 400/squareCount; 
-    squareCounter.innerHTML = `${squareCount} x ${squareCount}`
+squareSelector.onchange = (e) => {
+    currentSquares = e.target.value
+    const squareSize = 400/currentSquares; 
+    squareCounter.innerHTML = `${currentSquares} x ${currentSquares}`
     container.innerHTML = ""
 
-    for(var i = 0; i<squareCount**2; i++) {
+    for(var i = 0; i<currentSquares**2; i++) {
         var squareDiv = document.createElement("div")
         squareDiv.classList.add("square")
         squareDiv.style.width= squareSize +"px"
