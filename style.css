@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+    padding: 25px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    color: #333;
+}
+
+button {
+    border: 1px solid #333;
+    color: #333;
+}
+
+button.active {
+    color: white;
+    background-color: #333;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.dashboard {
+    padding: 20px 0;
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 226, 226);
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    align-items: center;
+    gap: 5px;
+}
+
+.dashboard button {
+    width: 125px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dashboard input {
+    width: 125px;
+    cursor: pointer;
+}
+
+.dashboard .color{
+    width: 80px;
+    height: 80px;
+    border: none;
+    appearance: none;
+    background-color: rgb(226, 226, 226);
+}
+
+.dashboard .color::-webkit-color-swatch{
+    border-radius: 50%;
+}
+
+.dashboard .color:hover{
+    scale: 1.1;
+}
+
+.dashboard button:hover{
+    scale: 1.1;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #333;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 25px;
+    height: 25px;
+}
