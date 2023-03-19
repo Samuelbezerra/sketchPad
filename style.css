@@ -78,3 +78,18 @@ button.active {
     width: 25px;
     height: 25px;
 }
+
+@media screen and (max-width: 650px) {
+    .wrapper {
+        gap: 25px;
+        flex-direction: column-reverse;
+    }
+
+    .wrapper .container {
+        margin: 0 auto;
+    }
+
+    .wrapper .dashboard {
+        margin: 0 auto;
+    }
+}
